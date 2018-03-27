@@ -1,14 +1,18 @@
 <template lang="html">
   <div :class="$style.home">
-    <layoutHeader />
+    <layout-header />
+    <hslider />
   </div>
 </template>
 
 <script>
-import layoutHeader from '../layout/header'
+import LayoutHeader from '../../layout/header'
+import hslider from './hslider'
+
 export default {
   components: {
-    layoutHeader
+    LayoutHeader,
+    hslider
   }
 }
 </script>

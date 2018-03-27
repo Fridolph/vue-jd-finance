@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: 'btn',
   props: {
     cname: {
       type: String,

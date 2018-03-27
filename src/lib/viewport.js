@@ -1,8 +1,12 @@
 (function(window, document) {
-  // 给hotcss开辟个命名哦克难攻坚
-  var hotcss = {}(function() {
-    // 根据devicePixelRatio自定计算scale
-    // 可以有效解决移动端1px
+
+
+  //给hotcss开辟个命名空间，别问我为什么，我要给你准备你会用到的方法，免得用到的时候还要自己写。
+  var hotcss = {}
+
+  ;(function() {
+    //根据devicePixelRatio自定计算scale
+    //可以有效解决移动端1px这个世纪难题。
     var viewportEl = document.querySelector('meta[name="viewport"]'),
       hotcssEl = document.querySelector('meta[name="hotcss"]'),
       dpr = window.devicePixelRatio || 1,
@@ -11,7 +15,7 @@
 
     dpr = dpr >= 3 ? 3 : dpr >= 2 ? 2 : 1
 
-    // 允许通过自定义name为hotcss的meta头，通过initial-dpr来强制定义页面缩放
+    //允许通过自定义name为hotcss的meta头，通过initial-dpr来强制定义页面缩放
     if (hotcssEl) {
       var hotcssCon = hotcssEl.getAttribute('content')
       if (hotcssCon) {
@@ -19,11 +23,11 @@
         if (initialDprMatch) {
           dpr = parseFloat(initialDprMatch[1])
         }
-        var maxWidthMatch = hotcssCon.match(/max\-width=(\d\.)+/)
+        var maxWidthMatch = hotcssCon.match(/max\-width=([\d\.]+)/)
         if (maxWidthMatch) {
           maxWidth = parseFloat(maxWidthMatch[1])
         }
-        var designWidthMatch = hotcssCon.match(/degisn\-width=([\d\.])+/)
+        var designWidthMatch = hotcssCon.match(/design\-width=([\d\.]+)/)
         if (designWidthMatch) {
           designWidth = parseFloat(designWidthMatch[1])
         }
@@ -39,11 +43,17 @@
     if (designWidth) {
       document.documentElement.setAttribute('design-width', designWidth)
     }
-
-    hotcss.designWidth = designWidth // 保证px2rem 和 rem2px 不传第二个参数时，获取hotcss.designWidth 是undefined 导致的 NaN
+    hotcss.designWidth = designWidth // 保证px2rem 和 rem2px 不传第二个参数时, 获取hotcss.designWidth是undefined导致的NaN
 
     var scale = 1 / dpr,
-      content = `width=device-width, initial-scale=${scale}, minimum-scale=${scale}, maximum-scale=${scale}, user-scalable=no`
+      content =
+        'width=device-width, initial-scale=' +
+        scale +
+        ', minimum-scale=' +
+        scale +
+        ', maximum-scale=' +
+        scale +
+        ', user-scalable=no'
 
     if (viewportEl) {
       viewportEl.setAttribute('content', content)
@@ -56,10 +66,10 @@
   })()
 
   hotcss.px2rem = function(px, designWidth) {
-    // 预判你将会在JS中用到的尺寸，将提供一个方法帮助你在JS中的px转为rem
+    //预判你将会在JS中用到尺寸，特提供一个方法助你在JS中将px转为rem。就是这么贴心。
     if (!designWidth) {
-      // 如果在JS中大量用到此方法，建议直接定义 hotcss.designWidth 来定义设计图尺寸
-      // 否则可以在第二个参数告诉 设计图有多大
+      //如果你在JS中大量用到此方法，建议直接定义 hotcss.designWidth 来定义设计图尺寸;
+      //否则可以在第二个参数告诉我你的设计图是多大。
       designWidth = parseInt(hotcss.designWidth, 10)
     }
 
@@ -67,16 +77,16 @@
   }
 
   hotcss.rem2px = function(rem, designWidth) {
-    // 新增一个rem2px的方法，用法和上一样
+    //新增一个rem2px的方法。用法和px2rem一致。
     if (!designWidth) {
       designWidth = parseInt(hotcss.designWidth, 10)
     }
-    // rem可能为小数，这里不再做处理了
+    //rem可能为小数，这里不再做处理了
     return rem * 20 * designWidth / 320
   }
 
   hotcss.mresize = function() {
-    // 核心方法，给html设置font-size
+    //对，这个就是核心方法了，给HTML设置font-size。
     var innerWidth =
       document.documentElement.getBoundingClientRect().width ||
       window.innerWidth
@@ -94,7 +104,8 @@
     hotcss.callback && hotcss.callback()
   }
 
-  hotcss.mresize() // 直接调用一次先
+  hotcss.mresize()
+  //直接调用一次
 
   window.addEventListener(
     'resize',
@@ -104,15 +115,16 @@
     },
     false
   )
-  // 绑定resize时调用
+  //绑定resize的时候调用
 
   window.addEventListener('load', hotcss.mresize, false)
-  // 防止不明原因的bug，load之后再调用一次
+  //防止不明原因的bug。load之后再调用一次。
 
   setTimeout(function() {
     hotcss.mresize()
+    //防止某些机型怪异现象，异步再调用一次
   }, 333)
 
   window.hotcss = hotcss
-  // 命名空间暴露出来，控制权交出
+  //命名空间暴露给你，控制权交给你，想怎么调怎么调。
 })(window, document)
