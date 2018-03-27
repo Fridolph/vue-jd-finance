@@ -9,7 +9,7 @@ module.exports = env => {
   }
   let plugins=[
     new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({template: './app/views/index.html'}),
+    new HtmlWebpackPlugin({template: './src/assets/index.html'}),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ];
@@ -24,9 +24,10 @@ module.exports = env => {
     )
   }
   return {
-    entry: {
-      app: './app/js/main.js'
-    },
+    entry: ['./src/lib/viewport.js', './app/js/main.js'], 
+    // entry: {
+    //   src: './src/main.js'
+    // },
     devServer: {
       contentBase: './dist',
       hot: true,
