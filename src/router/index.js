@@ -4,7 +4,8 @@ import Home from '../views/Home'
 import Money from '../views/Money'
 import White from '../views/White'
 import Zhong from '../views/Zhong'
-// // import My from '../views/My'
+// import My from '../views/My'
+import Download from '../views/Special/Download'
 
 Vue.use(Router)
 
@@ -42,6 +43,11 @@ export default new Router({
       path: '/Zhong',
       name: 'zhong',
       component: Zhong
+    },
+    {
+      path: '/download',
+      name: 'donwload',
+      component: Download
     }
   ]
 })

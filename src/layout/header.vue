@@ -5,7 +5,7 @@
       |
       <a href="">登录</a>
     </span>
-    <btn :class="$style.btnDownload">App下载</btn>
+    <router-link :class="$style.btnDownload" to="/download">App下载</router-link>
   </header>
 </template>
 
@@ -51,6 +51,9 @@ export default {
       padding: 0;
       border-radius: 4px;
       margin: 28px 24px 0 0;
+      background-color:#F04752;
+      text-align: center;
+      color:#fff;
     }
   }
 </style>

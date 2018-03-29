@@ -41,25 +41,25 @@ export default {
       ],
       menulist: [
         {
-          link: 'youhui',
+          link: 'download',
           src:
             'https://img12.360buyimg.com/jrpmobile/jfs/t18853/94/1057782448/42435/d084611f/5aba1d97N80d5eb08.jpg?width=750&height=320',
           title: '优惠券'
         },
         {
-          link: 'hongbao',
+          link: 'download',
           src:
             'https://img12.360buyimg.com/jrpmobile/jfs/t5590/252/875247023/17343/946aa72c/59224650N0f7ffc92.png?width=132&height=132',
           title: '领红包'
         },
         {
-          link: 'gangbeng',
+          link: 'download',
           src:
             'https://img12.360buyimg.com/jrpmobile/jfs/t4393/329/2180608902/13217/c88c0cec/58ec9dcdN1534e2d7.png?width=132&height=132',
           title: '抢钢镚'
         },
         {
-          link: 'baitiao',
+          link: 'download',
           src:
             'https://img12.360buyimg.com/jrpmobile/jfs/t5488/298/1036263348/12073/b4f4de97/590ac8e8Ne9def22e.png?width=135&height=135',
           title: '白条提额'
