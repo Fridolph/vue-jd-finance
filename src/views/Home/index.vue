@@ -1,0 +1,39 @@
+<template lang="html">
+  <div :class="$style.home">
+    <LayoutHeader />
+    <HSlider />
+    <Notice />
+    <Money />
+    <Product />
+    <Life />
+    <LayoutFooter />
+  </div>
+</template>
+
+<script>
+import LayoutHeader from '../../layout/header'
+import HSlider from './HSlider'
+import Notice from './Notice'
+import Money from './Money'
+import Product from './Product'
+import Life from './Life'
+import LayoutFooter from '../../layout/Footer'
+
+export default {
+  components: {
+    LayoutHeader,
+    HSlider,
+    Notice,
+    Money,
+    Product,
+    Life,
+    LayoutFooter
+  }
+}
+</script>
+
+<style lang="scss" module>
+.home {
+  font-size: 80px;
+}
+</style>
