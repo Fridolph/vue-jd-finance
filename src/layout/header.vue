@@ -32,6 +32,9 @@ export default {
     background: #fff url(//m.jr.jd.com/spe/qyy/main/images/jr-logo.png) no-repeat center center;
     background-size: auto 50%;
     z-index: 100;
+    a {
+      color: #666;
+    }
     .left {
       font-size: 28px;
       height: 30px;

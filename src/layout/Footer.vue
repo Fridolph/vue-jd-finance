@@ -1,5 +1,5 @@
 <template>
-  <Panel title="公司信息" cname="panel-company" :class="$style.panel">
+  <Panel title="公司信息" :showTitle="false" cname="panel-company" :class="$style.panel">
     <div :class="$style.content">
       <section :class="$style.helpWrapper">
         <img src="https://img12.360buyimg.com/jrpmobile/jfs/t2842/350/3035567089/14791/5f6ff93d/577cf395N31e76288.png?width=1125&height=252" alt="">
@@ -85,7 +85,7 @@ export default {
       }
     }
     ul {
-      margin-bottom: 20px;
+      padding-bottom: 20px;
       background-color: #f5f5f5;
       li {
         color: #999;
@@ -95,7 +95,7 @@ export default {
         line-height: 72px;
         border-top: 1px solid #dedede;
         p {
-          padding: 18px 12px;
+          padding: 12px;
         }
       }
     }
@@ -106,9 +106,6 @@ export default {
 <style lang="scss">
 .panel-company {
   margin-bottom: 100px;
-  background-color: #f5f5f5;
-  .caption {
-    display: none;
-  }
+  background-color: #f5f5f5;  
 }
 </style>

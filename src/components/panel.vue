@@ -1,6 +1,6 @@
 <template>
   <section :class="[panelClass, cname]">
-    <div class="caption">- {{title}} -</div>
+    <div v-if="showTitle" class="caption">- {{title}} -</div>
     <slot></slot>
   </section>
 </template>
@@ -10,7 +10,8 @@ export default {
   name: 'panel',
   props: {
     cname: { type: String, default: '' },
-    title: { type: String, default: '' }
+    title: { type: String, default: '' },
+    showTitle: { type: Boolean, default: true }
   },
   data() {
     return {

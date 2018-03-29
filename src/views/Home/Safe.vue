@@ -5,9 +5,7 @@
 </template>
 
 <script>
-export default {
-  
-}
+export default {}
 </script>
 
 <style lang="scss" module>
@@ -19,7 +17,6 @@ export default {
 </style>
 
 <style lang="scss">
-  .panel-safe {
-    
-  }
+.panel-safe {
+}
 </style>

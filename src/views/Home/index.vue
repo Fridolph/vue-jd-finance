@@ -1,5 +1,5 @@
 <template lang="html">
-  <div :class="$style.home">
+  <div :class="$style.pageHome">
     <LayoutHeader />
     <HSlider />
     <Notice />
@@ -36,7 +36,7 @@ export default {
 </script>
 
 <style lang="scss" module>
-.home {
+.page-home {
   font-size: 80px;
 }
 </style>
