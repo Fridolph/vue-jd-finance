@@ -7,6 +7,7 @@
     <Product />
     <Life />
     <LayoutFooter />
+    <Navbar />
   </div>
 </template>
 
@@ -18,6 +19,7 @@ import Money from './Money'
 import Product from './Product'
 import Life from './Life'
 import LayoutFooter from '../../layout/Footer'
+import Navbar from '../../layout/Navbar'
 
 export default {
   components: {
@@ -27,7 +29,8 @@ export default {
     Money,
     Product,
     Life,
-    LayoutFooter
+    LayoutFooter,
+    Navbar
   }
 }
 </script>
