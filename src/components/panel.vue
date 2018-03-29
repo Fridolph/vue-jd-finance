@@ -1,6 +1,6 @@
 <template>
   <section :class="[panelClass, cname]">
-    <h4>-{{title}}-</h4>
+    <div class="caption">- {{title}} -</div>
     <slot></slot>
   </section>
 </template>
@@ -24,5 +24,10 @@ export default {
 @import '../assets/css/element.scss';
 .panel {
   @include panel;
+  .caption {
+    text-align: center;
+    font-weight: bold;
+    // border-bottom: 1px solid #ddd;
+  }
 }
 </style>
