@@ -74,7 +74,7 @@ export default {
       &::before {
         display: none;
       }
-    }    
+    }
     .icon {
       flex: 0 0 88px;
       padding: 0 32px;

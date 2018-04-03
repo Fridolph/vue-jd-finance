@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "webpack --watch",
     "start": "webpack-dev-server --open",
-    "build": "webpack --env.production"
+    "build": "webpack --env.production --progress"
   },
   "repository": {
     "type": "git",
@@ -85,10 +85,11 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
-    "eslint": "^4.13.0",
-    "eslint-config-mysticatea": "^12.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-mysticatea": "^13.0.2",
     "eslint-plugin-html": "^4.0.2",
-    "eslint-plugin-vue": "^4.0.0-beta.2",
-    "vue-eslint-parser": "^2.0.1-beta.2"
+    "eslint-plugin-vue": "^4.4.0",
+    "uglifyjs-webpack-plugin": "^1.2.4",
+    "vue-eslint-parser": "^2.0.3"
   }
 }

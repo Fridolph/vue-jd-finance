@@ -49,8 +49,9 @@ export default {
   right: 0;
   bottom: 0;
   height: 100px;
-  margin: 0;
   z-index: 999;
+  margin: 0 0 0 0 !important;
+  padding: 0;
   .caption {
     display: none;
   }  
@@ -69,15 +70,5 @@ export default {
       }
     }
   }
-}
-</style>
-
-<style lang="scss">
-.layout-navbar {
-  .caption {
-    display: none;
-  }
-  margin: 0;
-  padding: 0;
 }
 </style>
